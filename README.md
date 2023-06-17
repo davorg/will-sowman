@@ -1,3 +1,3 @@
-# Bill Sowman
+# Will Sowman
 
-The source code for Bill Sowman's web site.
+The source code for Will Sowman's web site.
