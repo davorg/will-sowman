@@ -1,348 +1,311 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYJJ84L0LX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<html lang="en-GB">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYJJ84L0LX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag('config', 'G-VYJJ84L0LX');
-    </script>
+    gtag('config', 'G-VYJJ84L0LX');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Will Sowman — Author</title>
+  <meta name="description" content="Will Sowman is a south London author. Books include Down With Work, From Commuting to Freedom, and Prompt Engineering for Everyone." />
+  <link rel="canonical" href="https://will.sowman.org/" />
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Will Sowman, author of 'Down With Work', 'From Commuting to Freedom' and 'Prompt Engineering for Everyone', helps you navigate the world of freelancing and the power of AI.">
+  <!-- Cosy, bookish fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://will.sowman.org/">
-    <meta property="og:title" content="Will Sowman - Author">
-    <meta property="og:description" content="Will Sowman, author of 'Down With Work', 'From Commuting to Freedom' and 'Prompt Engineering for Everyone', helps you navigate the world of freelancing and the power of AI.">
-    <meta property="og:image" content="https://will.sowman.org/img/will-sowman.png">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:site_name" content="Will Sowman — Author"/>
+  <meta property="og:title" content="Will Sowman — Author"/>
+  <meta property="og:description" content="Books: Down With Work; From Commuting to Freedom; Prompt Engineering for Everyone."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://will.sowman.org/"/>
+  <meta property="og:image" content="https://will.sowman.org/images/og-1200x630.jpg"/>
+  <meta property="og:image:alt" content="Covers of books by Will Sowman"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://will.sowman.org/">
-    <meta property="twitter:title" content="Will Sowman - Author">
-    <meta property="twitter:description" content="Will Sowman, author of 'Down With Work', 'From Commuting to Freedom' and 'Prompt Engineering for Everyone', helps you navigate the world of freelancing and the power of AI.">
-    <meta property="twitter:image" content="https://will.sowman.org/img/will-sowman.png">
+  <style>
+    :root{
+      --paper: #fbf7f1;
+      --ink: #2f2a28;
+      --muted: #6f665f;
+      --accent: #34557a;      /* deep blue */
+      --accent-2:#e6b676;     /* warm gold */
+      --card: #fffdf8;
+      --border: #efe1d2;
+      --shadow: 0 12px 32px rgba(50,30,10,.12);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at -10% -30%, #fff, transparent 60%),
+        radial-gradient(1200px 600px at 110% 120%, #fff, transparent 60%),
+        linear-gradient(0deg, #f6efe5 0%, #fff 100%);
+      background-color:var(--paper);
+      line-height:1.6;
+    }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-          crossorigin="anonymous">
+    a{ color: var(--accent); text-decoration: none }
+    a:hover{ text-decoration: underline }
 
-    <style>
-img.img-thumbnail {
-  max-width: 15%;
-  float: right;
-}
-    </style>
+    /* Header */
+    header{
+      max-width:1100px; margin: 0 auto; padding: clamp(16px, 3vw, 28px);
+    }
+    .masthead{
+      display:grid; grid-template-columns: 160px 1fr; gap: clamp(14px, 2.5vw, 24px);
+      align-items:center; background: var(--card); border:1px solid var(--border); border-radius: var(--radius);
+      padding: clamp(14px, 2.5vw, 22px); box-shadow: var(--shadow);
+    }
+    .avatar{
+      width: 160px; height:160px; border-radius: 20px; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    }
+    .eyebrow{ font-size:.95rem; color:var(--muted); margin-bottom:.25rem }
+    h1{ font-family: "Literata", Georgia, serif; font-weight: 800; font-size: clamp(28px, 4.2vw, 48px); margin:.1em 0 .15em }
+    .tagline{ font-family:"Literata", Georgia, serif; font-size: clamp(15px, 2vw, 20px); opacity:.95; margin:.4rem 0 1rem }
+    .byline{ font-weight:700; margin-bottom: .6rem }
 
-    <title>Will Sowman - Author</title>
+    .cta-row{ display:flex; gap:10px; flex-wrap:wrap }
+    .btn{ display:inline-block; border:0; border-radius:999px; padding:.8rem 1.3rem; font-weight:800; cursor:pointer; box-shadow: 0 8px 18px rgba(0,0,0,.12) }
+    .btn-primary{ background: var(--accent); color:#fff }
+    .btn-secondary{ background: #f1ece4; color:#493f38 }
+    .btn:hover{ filter: brightness(1.05) }
 
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Will Sowman",
-  "url": "https://will.sowman.org/",
-  "image": "https://will.sowman.org/img/will-sowman.png",
-  "sameAs": [
-  ],
-  "jobTitle": "Author",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Self-Employed"
-  },
-  "@reverse": {
-    "author": [{
-      "@type": "Book",
-      "name": "Down With Work - From Cubicle to Coffee Shop: Redefining Work in the Modern Age",
-      "url": "https://will.sowman.org/#downwithwork",
-      "image": "https://will.sowman.org/img/down-with-work.png"
-    }, {
-      "@type": "Book",
-      "name": "From Commuting to Freedom: How to Build a Fulfilling Career on Your Own Terms",
-      "url": "https://will.sowman.org/#commuting",
-      "image": "https://will.sowman.org/img/from_commuting_to_freedom.png"
-    }, {
-      "@type": "Book",
-      "name": "Prompt Engineering for Everyone: Unleashing the Power of AI",
-      "url": "https://will.sowman.org/#prompt",
-      "image": "https://will.sowman.org/img/prompt_engineering_for_everyone.png"
-    }]
+    /* Main sections */
+    main{ max-width:1100px; margin: 10px auto 40px; padding: 0 clamp(12px, 2vw, 16px) }
+
+    section{ margin-top: 28px }
+    .section-title{ font-family:"Literata", Georgia, serif; font-size: clamp(22px, 3.2vw, 32px); margin: 2px 0 12px }
+
+    /* About */
+    .about{ background: var(--card); border:1px solid var(--border); border-radius: var(--radius); padding: clamp(14px, 2.5vw, 22px); box-shadow: var(--shadow); }
+
+    /* Books */
+    .grid{ display:grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .book{ display:flex; flex-direction:column; gap:12px; background:var(--card); border:1px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow) }
+    .cover{ width:100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 14px; border: 1px solid #ecdcca; background:#fff }
+    .book h3{ font-size:1.2rem; margin:.2rem 0 0 }
+    .subtitle{ color:#5a4b4b; font-size:.95rem; margin:0 0 .2rem }
+    .blurb{ font-size:.98rem; color:#3b2f2f }
+    .pill{ display:inline-block; font-size:.8rem; padding:.2rem .55rem; border-radius:999px; background:#f3eadf; border:1px solid #e7d8c6; color:#5a4b4b }
+    .buyrow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center }
+
+    details.more-stores{ background:#fff; border:1px solid #ecdcca; border-radius:14px; padding:8px 10px }
+    details.more-stores summary{ cursor:pointer; font-weight:700 }
+    .store-grid{ display:grid; gap:8px; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); margin-top:10px }
+    .store-grid a{ text-align:center; text-decoration:none; font-weight:700; padding:10px 12px; background:#f5eee4; border-radius:14px; border:1px solid #ead9c7; color:#3b2f2f }
+
+    /* Contact */
+    .contact{ background:var(--card); border:1px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow) }
+
+    footer{ max-width:1100px; margin: 20px auto 40px; padding: 0 clamp(12px, 2vw, 16px); font-size:.95rem; opacity:.8; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px }
+
+    @media (max-width: 720px){
+      .masthead{ grid-template-columns: 100px 1fr }
+      .avatar{ width:100px; height:100px; border-radius:14px }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="masthead">
+      <img src="images/will-sowman.png" alt="Portrait of Will Sowman" class="avatar" />
+      <div>
+        <div class="eyebrow">Author</div>
+        <h1>Will Sowman</h1>
+        <div class="tagline">Author of <em>From Commuting to Freedom</em> and <em>Prompt Engineering for Everyone</em>.</div>
+        <div class="byline">Based in south London.</div>
+        <div class="cta-row">
+          <button id="buyNowHeader" class="btn btn-primary" type="button">Buy my latest book</button>
+          <a href="#books" class="btn btn-secondary">Browse all books</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="about" id="about">
+      <h2 class="section-title">About Will</h2>
+      <p>Will Sowman is an author based in south London, living with his wife and two spirited cats, Monty and Python. He writes about technology and work, exploring how we can design a career on our own terms and use AI effectively in everyday life.</p>
+    </section>
+
+    <section id="books">
+      <h2 class="section-title">Books</h2>
+      <div class="grid" id="bookGrid"></div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p>You can email Will at <a href="mailto:will@sowman.org">will@sowman.org</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Will Sowman</div>
+    <div><a href="#about">About</a> · <a href="#books">Books</a> · <a href="#contact">Contact</a></div>
+  </footer>
+
+  <!-- JSON-LD: Person + Books (edit the image URLs to your covers) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Will Sowman",
+    "jobTitle": "Author",
+    "url": "https://will.sowman.org/",
+    "image": "https://will.sowman.org/images/will-sowman.png",
+    "address": {"@type":"PostalAddress", "addressLocality":"London", "addressCountry":"GB"},
+    "worksFor": {"@type":"Organization", "name":"Independent"},
+    "worksExample": [
+      {
+        "@type":"Book",
+        "name":"Down With Work",
+        "alternateName":"Down With Work — From Cubicle to Coffee Shop: Redefining Work in the Modern Age",
+        "author":{"@type":"Person", "name":"Will Sowman"},
+        "bookFormat":"EBook",
+        "inLanguage":"en-GB",
+        "isbn":"",
+        "url":"https://www.amazon.co.uk/dp/B0DJRYGFKM",
+        "image":"https://will.sowman.org/images/down-with-work.png"
+      },
+      {
+        "@type":"Book",
+        "name":"From Commuting to Freedom",
+        "alternateName":"From Commuting to Freedom: How to Build a Fulfilling Career on Your Own Terms",
+        "author":{"@type":"Person", "name":"Will Sowman"},
+        "bookFormat":"EBook",
+        "inLanguage":"en-GB",
+        "url":"https://leanpub.com/fromcommutingtofreedom/",
+        "image":"https://will.sowman.org/images/from_commuting_to_freedom.png"
+      },
+      {
+        "@type":"Book",
+        "name":"Prompt Engineering for Everyone",
+        "alternateName":"Prompt Engineering for Everyone: Unleashing the Power of AI",
+        "author":{"@type":"Person", "name":"Will Sowman"},
+        "bookFormat":"EBook",
+        "inLanguage":"en-GB",
+        "url":"https://leanpub.com/promptengineeringforeveryone/",
+        "image":"https://will.sowman.org/images/prompt_engineering_for_everyone.png"
+      }
+    ]
   }
-}
   </script>
 
-  </head>
-  <body>
-    <!-- Header Section -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ms-3" href="#">Will Sowman</a>
-        <!-- Add navbar content here -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#about">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#books" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Books
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#down-with-work">Down With Work</a></li>
-                <li><a class="dropdown-item" href="#commuting">From Commuting to Freedom</a></li>
-                <li><a class="dropdown-item" href="#prompt">Prompt Engineering For Everyone</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <script>
+    // ---------- Config ----------
+    const AFFILIATE_TAG = "davblog-21"; // change or blank out if you prefer
 
-    <!-- Hero Section -->
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Will Sowman</h1>
-        <p class="lead text-muted">Author of <i>From Commuting to Freedom</i> and <i>Prompt Engineering for Everyone</i></p>
-        <!-- Add more hero content here -->
-      </div>
-    </section>
+    // Shared Amazon store mapping
+    const AMAZON_DOMAINS = {
+      AU: "amazon.com.au", BR: "amazon.com.br", CA: "amazon.ca", DE: "amazon.de", ES: "amazon.es",
+      FR: "amazon.fr", IN: "amazon.in", IT: "amazon.it", JP: "amazon.co.jp", MX: "amazon.com.mx",
+      NL: "amazon.nl", UK: "amazon.co.uk", US: "amazon.com"
+    };
 
-    <!-- About Section -->
-<section>
-  <div class="container">
-    <h2 id="about">About Will</h2>
-    <img src="img/will-sowman.png" alt="Will Sowman" class="img-thumbnail">
-    <p>Will Sowman is an author based in south London. He lives with his wife and their two spirited cats, Monty and Python. A passionate writer with a keen interest in technology and its intersection with our daily lives, Will has always been fascinated by the vast potential of artificial intelligence and its transformative power.</p>
+    const LOCALE_MAP = new Map([
+      [/^en-GB/i, "UK"], [/^en-AU/i, "AU"], [/^en-CA/i, "CA"], [/^en-US/i, "US"], [/^en-NZ/i, "AU"],
+      [/^fr(-|_)?/i, "FR"], [/^de(-|_)?/i, "DE"], [/^es(-|_)?/i, "ES"], [/^it(-|_)?/i, "IT"],
+      [/^nl(-|_)?/i, "NL"], [/^ja(-|_)?/i, "JP"], [/^pt(-|_)?BR/i, "BR"], [/^hi(-|_)?/i, "IN"]
+    ]);
 
-    <p>Will's journey began in the corporate world, where he worked for over a decade before embarking on a freelance career. His experiences, both as a corporate employee and a freelancer, have given him unique insights into the challenges and rewards of stepping off the traditional career path. These insights serve as the foundation of his book, <i>From Commuting to Freedom: How to Build a Fulfilling Career on Your Own Terms</i>.</p>
+    const BOOKS = [
+      {
+        id: "dww",
+        title: "Down With Work",
+        subtitle: "From Cubicle to Coffee Shop: Redefining Work in the Modern Age",
+        asin: "B0DJRYGFKM",
+        cover: "images/down-with-work.png",
+        blurb: "A practical guide to leaving the corporate rat race and designing flexible, fulfilling work on your own terms.",
+        leanpub: null,
+        newest: true
+      },
+      {
+        id: "fctf",
+        title: "From Commuting to Freedom",
+        subtitle: "How to Build a Fulfilling Career on Your Own Terms",
+        asin: "B0C43V25XW",
+        cover: "images/from_commuting_to_freedom.png",
+        blurb: "Prepare for freelancing, find clients, manage and scale your business, and avoid burnout — a complete guide to self-employment.",
+        leanpub: "https://leanpub.com/fromcommutingtofreedom/"
+      },
+      {
+        id: "pefe",
+        title: "Prompt Engineering for Everyone",
+        subtitle: "Unleashing the Power of AI",
+        asin: "B0C46XPQ8R",
+        cover: "images/prompt_engineering_for_everyone.png",
+        blurb: "An accessible tour of using prompts to get reliable, useful results from AI — with examples for work and learning.",
+        leanpub: "https://leanpub.com/promptengineeringforeveryone/"
+      }
+    ];
 
-    <p>His second book, <i>Prompt Engineering for Everyone: Unleashing the Power of AI</i>, stems from his fascination with AI and its limitless possibilities. A self-taught prompt engineer, Will believes in the democratization of technology and aims to make AI more accessible and understandable to everyone, regardless of their technical expertise.</p>
+    // ---------- Helpers ----------
+    function detectRegion(){
+      const langs = navigator.languages || [navigator.language || ""];
+      for (const lang of langs){
+        for (const [regex, region] of LOCALE_MAP){ if (regex.test(lang)) return region; }
+      }
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+      if (/London|Europe\//.test(tz)) return "UK";
+      if (/America\//.test(tz)) return "US";
+      return "UK";
+    }
 
-    <p>His Latest book, <i>Down With Work - From Cubicle to Coffee Shop: Redefining Work in the Modern Age</i> is a guidebook for moving away from the corporate rat race and finding a more fulfilling working life.</p>
+    function amazonURL(region, asin){
+      const domain = AMAZON_DOMAINS[region] || AMAZON_DOMAINS.UK;
+      const url = new URL(`https://${domain}/dp/${asin}`);
+      if (AFFILIATE_TAG) url.searchParams.set("tag", AFFILIATE_TAG);
+      return url.toString();
+    }
 
-    <p>In his free time, Will enjoys exploring the vibrant food scene in south London, practicing yoga, and cultivating his home garden. An advocate for work-life balance, he believes that a fulfilling career should not come at the expense of personal wellbeing and happiness.</p>
-  </div>
-</section>
+    function renderBooks(){
+      const grid = document.getElementById('bookGrid');
+      const region = detectRegion();
 
-<!-- Books Section -->
-<section>
-  <div class="container">
-    <h2 id="books">Books</h2>
+      BOOKS.forEach(b => {
+        const card = document.createElement('article');
+        card.className = 'book';
+        card.innerHTML = `
+          <img class="cover" src="${b.cover}" alt="Cover of ${b.title}" loading="lazy"/>
+          ${b.newest ? '<span class="pill">Newest</span>' : ''}
+          <h3>${b.title}</h3>
+          <div class="subtitle">${b.subtitle}</div>
+          <p class="blurb">${b.blurb}</p>
+          <div class="buyrow">
+            <a class="btn btn-primary" target="_blank" rel="noopener" href="${amazonURL(region, b.asin)}">Buy on Amazon ${region}</a>
+            ${b.leanpub ? `<a class="btn btn-secondary" target="_blank" rel="noopener" href="${b.leanpub}">Also on Leanpub</a>` : ''}
+          </div>
+          <details class="more-stores"><summary>More stores</summary>
+            <div class="store-grid">
+              ${Object.keys(AMAZON_DOMAINS).map(code => `<a target="_blank" rel="noopener" href="${amazonURL(code, b.asin)}">Amazon ${code}</a>`).join('')}
+            </div>
+          </details>
+        `;
+        grid.appendChild(card);
+      });
 
-    <!-- Book 1 -->
-    <div class="row">
-      <div class="col">
-        <img src="img/down-with-work.png" alt="Down With Work" class="img-thumbnail">
-        <h3 id="down-with-work">Down With Work<br>
-          <span class="fs-5">From Cubicle to Coffee Shop: Redefining Work in the Modern Age</span></h3>
-        <p><!-- a target="_blank" href="https://leanpub.com/fromcommutingtofreedom/" class="btn btn-light">
-          Buy from LeanPub
-        </a><br -->
-        Buy at Amazon -
-          <a target="_blank"
-             href="https://www.amazon.com.au/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">AU</a>
-          <a target="_blank"
-             href="https://www.amazon.com.br/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">BR</a>
-          <a target="_blank"
-             href="https://www.amazon.ca/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">CA</a>
-          <a target="_blank"
-             href="https://www.amazon.de/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">DE</a>
-          <a target="_blank"
-             href="https://www.amazon.es/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">ES</a>
-          <a target="_blank"
-             href="https://www.amazon.fr/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">FR</a>
-          <a target="_blank"
-             href="https://www.amazon.in/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">IN</a>
-          <a target="_blank"
-             href="https://www.amazon.it/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">IT</a>
-          <a target="_blank"
-             href="https://www.amazon.co.jp/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">JP</a>
-          <a target="_blank"
-             href="https://www.amazon.com.mx/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">MX</a>
-          <a target="_blank"
-             href="https://www.amazon.nl/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">NL</a>
-          <a target="_blank"
-             href="https://www.amazon.co.uk/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">UK</a>
-          <a target="_blank"
-             href="https://www.amazon.com/dp/B0DJRYGFKM?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">US</a></p>
+      // Header CTA goes to newest book in the viewer's store
+      const newest = BOOKS.find(x=>x.newest) || BOOKS[0];
+      const buyHeader = document.getElementById('buyNowHeader');
+      if (buyHeader){
+        buyHeader.textContent = `Buy now: ${newest.title} on Amazon ${region}`;
+        buyHeader.addEventListener('click', ()=> window.open(amazonURL(region, newest.asin), '_blank', 'noopener'));
+      }
+    }
 
-        <p><i>Down With Work</i> is a comprehensive guide for anyone looking to break free from the constraints of traditional office life and design a career that aligns with their values and aspirations. Drawing on his own experience transitioning from corporate work to a fully-remote role—and later building a successful freelance consultancy—Will Sowman shares actionable strategies for finding remote and hybrid job opportunities, negotiating flexible working arrangements, and launching a profitable side hustle or freelancing business. Packed with practical advice, templates, and inspiring success stories, <i>Down with Work</i> is more than just a book—it’s a roadmap to creating a more meaningful, autonomous, and fulfilling professional life. Whether you’re ready to ditch the 9-to-5 entirely or simply want more flexibility and purpose in your work, this book will guide you every step of the way.</p>
-      </div>
-    </div>
-    <!-- Book 2 -->
-    <div class="row">
-      <div class="col">
-        <img src="img/from_commuting_to_freedom.png" alt="From Commuting to Freedom" class="img-thumbnail">
-        <h3 id="commuting">From Commuting to Freedom<br>
-          <span class="fs-5">How to Build a Fulfilling Career on Your Own Terms</span></h3>
-        <p><a target="_blank" href="https://leanpub.com/fromcommutingtofreedom/" class="btn btn-light">
-          Buy from LeanPub
-        </a><br>
-        Buy at Amazon - 
-          <a target="_blank"
-             href="https://www.amazon.com.au/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">AU</a>
-          <a target="_blank"
-             href="https://www.amazon.com.br/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">BR</a>
-          <a target="_blank"
-             href="https://www.amazon.ca/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">CA</a>
-          <a target="_blank"
-             href="https://www.amazon.de/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">DE</a>
-          <a target="_blank"
-             href="https://www.amazon.es/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">ES</a>
-          <a target="_blank"
-             href="https://www.amazon.fr/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">FR</a>
-          <a target="_blank"
-             href="https://www.amazon.in/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">IN</a>
-          <a target="_blank"
-             href="https://www.amazon.it/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">IT</a>
-          <a target="_blank"
-             href="https://www.amazon.co.jp/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">JP</a>
-          <a target="_blank"
-             href="https://www.amazon.com.mx/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">MX</a>
-          <a target="_blank"
-             href="https://www.amazon.nl/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">NL</a>
-          <a target="_blank"
-             href="https://www.amazon.co.uk/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">UK</a>
-          <a target="_blank"
-             href="https://www.amazon.com/dp/B0C43V25XW?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">US</a></p>
-         <p>Freelancing has become a popular career choice for people all around the world. Working for yourself instead of commuting to an office can provide flexibility, control, financial rewards, professional development, and a better work-life balance. In this comprehensive guide, you will learn how to prepare for freelancing, find clients, manage your business, scale your business, and overcome challenges. You'll explore the importance of a business plan, setting rates, building an online presence, and managing taxes and finances. You'll also discover strategies for networking, marketing, and pitching to clients, as well as tips for staying productive, managing difficult clients, and avoiding burnout. Whether you're just starting out as a freelancer or you're a seasoned professional, this book provides valuable insights and practical strategies for succeeding as a freelancer.</p>
-      </div>
-    </div>
-
-    <!-- Book 3 -->
-    <div class="row">
-      <div class="col">
-        <img src="img/prompt_engineering_for_everyone.png" alt="Prompt Engineering for Everyone" class="img-thumbnail">
-        <h3 id="prompt">Prompt Engineering for Everyone<br>
-          <span class="fs-5">Unleashing the Power of AI</span></h3>
-        <p><a target="_blank" href="https://leanpub.com/promptengineeringforeveryone/" class="btn btn-light">
-          Buy from LeanPub
-        </a><br>
-        Buy at Amazon - 
-          <a target="_blank"
-             href="https://www.amazon.com.au/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">AU</a>
-          <a target="_blank"
-             href="https://www.amazon.com.br/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">BR</a>
-          <a target="_blank"
-             href="https://www.amazon.ca/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">CA</a>
-          <a target="_blank"
-             href="https://www.amazon.de/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">DE</a>
-          <a target="_blank"
-             href="https://www.amazon.es/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">ES</a>
-          <a target="_blank"
-             href="https://www.amazon.fr/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">FR</a>
-          <a target="_blank"
-             href="https://www.amazon.in/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">IN</a>
-          <a target="_blank"
-             href="https://www.amazon.it/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">IT</a>
-          <a target="_blank"
-             href="https://www.amazon.co.jp/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">JP</a>
-          <a target="_blank"
-             href="https://www.amazon.com.mx/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">MX</a>
-          <a target="_blank"
-             href="https://www.amazon.nl/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">NL</a>
-          <a target="_blank"
-             href="https://www.amazon.co.uk/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">UK</a>
-          <a target="_blank"
-             href="https://www.amazon.com/dp/B0C46XPQ8R?linkCode=sl1&tag=davblog-21"
-             class="btn btn-light">US</a></p>
-
-        <p>Discover the key to unlocking the full potential of artificial intelligence with <i>Prompt Engineering for Everyone: Unleashing the Power of AIM</i>! Written in an accessible and engaging style, this book is perfect for anyone interested in the fascinating world of AI, regardless of technical expertise.</p>
-
-        <p>"Prompt Engineering for Everyone" dives deep into the art of crafting powerful prompts, enabling AI systems to provide more accurate, relevant, and insightful responses. Whether you're a business professional, an educator, or simply a curious individual looking to explore the vast possibilities of AI, this comprehensive guide equips you with the knowledge and tools needed to succeed.</p>
-
-        <p>Inside this indispensable resource, you'll find:</p>
-
-        <ul>
-          <li>A comprehensive introduction to artificial intelligence and prompt engineering, explained in non-technical terms</li>
-          <li>An exploration of the essential elements of crafting effective prompts for various applications, from customer support to content generation</li>
-          <li>Techniques for overcoming AI limitations and addressing biases through prompt engineering</li>
-          <li>Practical examples of prompt engineering applications in diverse industries, including healthcare, finance, and creative arts</li>
-          <li>A roadmap for becoming a skilled prompt engineer, featuring essential skills, resources, and tips for success</li>
-        </ul>
-
-        <p>Don't miss your chance to harness the power of AI and transform the way you interact with technology. Get your copy of <i>Prompt Engineering for Everyone: Unleashing the Power of AI</i> today and begin your journey into the exciting world of AI-driven innovation!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <!-- Contact Section -->
-    <section>
-      <div class="container">
-        <h2 id="contact">Contact</h2>
-        <p>You can email Will at <a href="mailto:will@sowman.org">will@sowman.org</a>.</p>
-      </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-      <div class="container">
-        <p>&copy; 2023 Will Sowman</p>
-      </div>
-    </footer>
-
-    <!-- Optional JavaScript -->
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-            crossorigin="anonymous"></script>
-  </body>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    renderBooks();
+  </script>
+</body>
 </html>
 
