@@ -125,7 +125,7 @@
         <div class="tagline">Author of <em>From Commuting to Freedom</em> and <em>Prompt Engineering for Everyone</em>.</div>
         <div class="byline">Based in south London.</div>
         <div class="cta-row">
-          <button id="buyNowHeader" class="btn btn-primary" type="button">Buy my latest book</button>
+          <button id="buyNowHeader" class="btn btn-primary" type="button"></button>
           <a href="#books" class="btn btn-secondary">Browse all books</a>
         </div>
       </div>
@@ -201,22 +201,10 @@
   }
   </script>
 
+  <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
   <script>
     // ---------- Config ----------
     const AFFILIATE_TAG = "davblog-21"; // change or blank out if you prefer
-
-    // Shared Amazon store mapping
-    const AMAZON_DOMAINS = {
-      AU: "amazon.com.au", BR: "amazon.com.br", CA: "amazon.ca", DE: "amazon.de", ES: "amazon.es",
-      FR: "amazon.fr", IN: "amazon.in", IT: "amazon.it", JP: "amazon.co.jp", MX: "amazon.com.mx",
-      NL: "amazon.nl", UK: "amazon.co.uk", US: "amazon.com"
-    };
-
-    const LOCALE_MAP = new Map([
-      [/^en-GB/i, "UK"], [/^en-AU/i, "AU"], [/^en-CA/i, "CA"], [/^en-US/i, "US"], [/^en-NZ/i, "AU"],
-      [/^fr(-|_)?/i, "FR"], [/^de(-|_)?/i, "DE"], [/^es(-|_)?/i, "ES"], [/^it(-|_)?/i, "IT"],
-      [/^nl(-|_)?/i, "NL"], [/^ja(-|_)?/i, "JP"], [/^pt(-|_)?BR/i, "BR"], [/^hi(-|_)?/i, "IN"]
-    ]);
 
     const BOOKS = [
       {
@@ -249,62 +237,61 @@
       }
     ];
 
-    // ---------- Helpers ----------
-    function detectRegion(){
-      const langs = navigator.languages || [navigator.language || ""];
-      for (const lang of langs){
-        for (const [regex, region] of LOCALE_MAP){ if (regex.test(lang)) return region; }
-      }
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-      if (/London|Europe\//.test(tz)) return "UK";
-      if (/America\//.test(tz)) return "US";
-      return "UK";
-    }
-
-    function amazonURL(region, asin){
-      const domain = AMAZON_DOMAINS[region] || AMAZON_DOMAINS.UK;
-      const url = new URL(`https://${domain}/dp/${asin}`);
-      if (AFFILIATE_TAG) url.searchParams.set("tag", AFFILIATE_TAG);
-      return url.toString();
-    }
-
     function renderBooks(){
       const grid = document.getElementById('bookGrid');
-      const region = detectRegion();
+      grid.innerHTML = '';
 
       BOOKS.forEach(b => {
         const card = document.createElement('article');
         card.className = 'book';
         card.innerHTML = `
-          <img class="cover" src="${b.cover}" alt="Cover of ${b.title}" loading="lazy"/>
+          <img class="cover" src="${b.cover}" alt="Cover of ${b.title}" loading="lazy" />
           ${b.newest ? '<span class="pill">Newest</span>' : ''}
           <h3>${b.title}</h3>
           <div class="subtitle">${b.subtitle}</div>
           <p class="blurb">${b.blurb}</p>
+
           <div class="buyrow">
-            <a class="btn btn-primary" target="_blank" rel="noopener" href="${amazonURL(region, b.asin)}">Buy on Amazon ${region}</a>
+            <a class="btn btn-primary"
+               data-amazon-asin="${b.asin}">Buy on Amazon</a>
             ${b.leanpub ? `<a class="btn btn-secondary" target="_blank" rel="noopener" href="${b.leanpub}">Also on Leanpub</a>` : ''}
           </div>
+
           <details class="more-stores"><summary>More stores</summary>
-            <div class="store-grid">
-              ${Object.keys(AMAZON_DOMAINS).map(code => `<a target="_blank" rel="noopener" href="${amazonURL(code, b.asin)}">Amazon ${code}</a>`).join('')}
-            </div>
+            <div class="store-grid"
+                 data-amazon-grid
+                 data-amazon-asin="${b.asin}"></div>
           </details>
         `;
         grid.appendChild(card);
       });
 
-      // Header CTA goes to newest book in the viewer's store
-      const newest = BOOKS.find(x=>x.newest) || BOOKS[0];
+      // Header CTA goes to newest book in the viewer's store (using the library)
+      const newest   = BOOKS.find(x => x.newest) || BOOKS[0];
       const buyHeader = document.getElementById('buyNowHeader');
-      if (buyHeader){
-        buyHeader.textContent = `Buy now: ${newest.title} on Amazon ${region}`;
-        buyHeader.addEventListener('click', ()=> window.open(amazonURL(region, newest.asin), '_blank', 'noopener'));
+
+      if (buyHeader && newest) {
+        // 1) Let the library detect the region and give us a nice label
+        const region = AmazonStore.detectRegion();
+        buyHeader.textContent = `Buy now: ${newest.title} on ${AmazonStore.label(region)}`;
+
+        // 2) Give the library the data it needs; enhanceAll() will wire the click
+        buyHeader.dataset.amazonAsin = newest.asin;
       }
     }
+  </script>
 
-    document.getElementById('year').textContent = new Date().getFullYear();
-    renderBooks();
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Build DOM first
+      renderBooks();
+
+      // after the book tiles are rendered:
+      AmazonStore.enhanceAll({ tag: AFFILIATE_TAG });         // wires all buy buttons
+      AmazonStore.renderStoreGridAll({ tag: AFFILIATE_TAG }); // fills any [data-amazon-grid]
+    });
   </script>
 </body>
 </html>
