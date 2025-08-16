@@ -1,128 +1,152 @@
 <!doctype html>
 <html lang="en-GB">
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYJJ84L0LX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VYJJ84L0LX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', 'G-VYJJ84L0LX');
-  </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Will Sowman — Author</title>
-  <meta name="description" content="Will Sowman is a south London author. Books include Down With Work, From Commuting to Freedom, and Prompt Engineering for Everyone." />
-  <link rel="canonical" href="https://will.sowman.org/" />
+      gtag('config', 'G-VYJJ84L0LX');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Will Sowman — Author</title>
+    <meta name="description"
+          content="Will Sowman is a south London author. Books include Down With Work, From Commuting to Freedom, and Prompt Engineering for Everyone." />
+    <link rel="canonical" href="https://will.sowman.org/" />
 
-  <!-- Cosy, bookish fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Cosy, bookish fonts -->
+    <link rel="styelsheet"
+          href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;800&family=Inter:wght@400;600;800&display=swap">
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:site_name" content="Will Sowman — Author">
-  <meta property="og:title" content="Will Sowman — Author">
-  <meta property="og:description" content="Books: Down With Work; From Commuting to Freedom; Prompt Engineering for Everyone.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://will.sowman.org/">
-  <meta property="og:image" content="https://will.sowman.org/images/og-1200x630.jpg">
-  <meta property="og:image:alt" content="Covers of books by Will Sowman">
-  <meta name="twitter:card" content="summary_large_image">
+    <!-- Open Graph / Twitter -->
+    <meta property="og:site_name" content="Will Sowman — Author">
+    <meta property="og:title" content="Will Sowman — Author">
+    <meta property="og:description"
+          content="Books: Down With Work; From Commuting to Freedom; Prompt Engineering for Everyone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://will.sowman.org/">
+    <meta property="og:image" content="https://will.sowman.org/images/og-1200x630.jpg">
+    <meta property="og:image:alt" content="Covers of books by Will Sowman">
+    <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <header>
-    <div class="masthead">
-      <img src="images/will-sowman.png" alt="Portrait of Will Sowman" class="avatar" />
-      <div>
-        <div class="eyebrow">Author</div>
-        <h1>Will Sowman</h1>
-        <div class="tagline">Author of <em>From Commuting to Freedom</em> and <em>Prompt Engineering for Everyone</em>.</div>
-        <div class="byline">Based in south London.</div>
-        <div class="cta-row">
-          <button id="buyNowHeader" class="btn btn-primary" type="button"></button>
-          <a href="#books" class="btn btn-secondary">Browse all books</a>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="masthead">
+        <img src="images/will-sowman.png" alt="Portrait of Will Sowman"
+             class="avatar" />
+        <div>
+          <div class="eyebrow">Author</div>
+          <h1>Will Sowman</h1>
+          <div class="tagline">Author of <em>Down With Work</em>, <em>From
+            Commuting to Freedom</em> and <em>Prompt Engineering for
+            Everyone</em>.</div>
+          <div class="byline">Based in south London.</div>
+          <div class="cta-row">
+            <button id="buyNowHeader" class="btn btn-primary"
+                    type="button"></button>
+            <a href="#books" class="btn btn-secondary">Browse all books</a>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="about" id="about">
-      <h2 class="section-title">About Will</h2>
-      <p>Will Sowman is an author based in south London, living with his
-        wife, <a href="https://alice.sowman.org/">Alice</a>, and two spirited
-        cats, Monty and Python. He writes about technology and work, exploring
-        how we can design a career on our own terms and use AI effectively in
-        everyday life.</p>
-    </section>
+    <main>
+      <section class="about" id="about">
+        <h2 class="section-title">About Will</h2>
+        <p>Will Sowman is an author based in south London, living with his
+          wife, <a href="https://alice.sowman.org/">Alice</a>, and two spirited
+          cats, Monty and Python. He writes about technology and work, exploring
+          how we can design a career on our own terms and use AI effectively in
+          everyday life.</p>
+      </section>
 
-    <section id="books">
-      <h2 class="section-title">Books</h2>
-      <div class="grid" id="bookGrid"></div>
-    </section>
+      <section id="books">
+        <h2 class="section-title">Books</h2>
+        <div class="grid" id="bookGrid"></div>
+      </section>
 
-    <section class="contact" id="contact">
-      <h2 class="section-title">Contact</h2>
-      <p>You can email Will at <a href="mailto:will@sowman.org">will@sowman.org</a>.</p>
-    </section>
-  </main>
+      <section class="contact" id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>You can email Will at
+          <a href="mailto:will@sowman.org">will@sowman.org</a>.</p>
+      </section>
+    </main>
 
-  <footer>
-    <div>© <span id="year"></span> Will Sowman</div>
-    <div><a href="#about">About</a> · <a href="#books">Books</a> · <a href="#contact">Contact</a></div>
-  </footer>
+    <footer>
+      <div>© <span id="year"></span> Will Sowman</div>
+      <div>
+        <a href="#about">About</a> · <a href="#books">Books</a> ·
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
 
-  <!-- JSON-LD: Person + Books (edit the image URLs to your covers) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Will Sowman",
-    "jobTitle": "Author",
-    "url": "https://will.sowman.org/",
-    "image": "https://will.sowman.org/images/will-sowman.png",
-    "address": {"@type":"PostalAddress", "addressLocality":"London", "addressCountry":"GB"},
-    "worksFor": {"@type":"Organization", "name":"Independent"},
-    "worksExample": [
-      {
-        "@type":"Book",
-        "name":"Down With Work",
-        "alternateName":"Down With Work — From Cubicle to Coffee Shop: Redefining Work in the Modern Age",
-        "author":{"@type":"Person", "name":"Will Sowman"},
-        "bookFormat":"EBook",
-        "inLanguage":"en-GB",
-        "isbn":"",
-        "url":"https://www.amazon.co.uk/dp/B0DJRYGFKM",
-        "image":"https://will.sowman.org/images/down-with-work.png"
+    <!-- JSON-LD: Person + Books (edit the image URLs to your covers) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Will Sowman",
+      "jobTitle": "Author",
+      "url": "https://will.sowman.org/",
+      "image": "https://will.sowman.org/images/will-sowman.png",
+      "address": {
+        "@type":"PostalAddress",
+        "addressLocality":"London",
+        "addressCountry":"GB"
       },
-      {
-        "@type":"Book",
-        "name":"From Commuting to Freedom",
-        "alternateName":"From Commuting to Freedom: How to Build a Fulfilling Career on Your Own Terms",
-        "author":{"@type":"Person", "name":"Will Sowman"},
-        "bookFormat":"EBook",
-        "inLanguage":"en-GB",
-        "url":"https://leanpub.com/fromcommutingtofreedom/",
-        "image":"https://will.sowman.org/images/from_commuting_to_freedom.png"
+      "worksFor": {
+        "@type":"Organization",
+        "name":"Independent"
       },
-      {
-        "@type":"Book",
-        "name":"Prompt Engineering for Everyone",
-        "alternateName":"Prompt Engineering for Everyone: Unleashing the Power of AI",
-        "author":{"@type":"Person", "name":"Will Sowman"},
-        "bookFormat":"EBook",
-        "inLanguage":"en-GB",
-        "url":"https://leanpub.com/promptengineeringforeveryone/",
-        "image":"https://will.sowman.org/images/prompt_engineering_for_everyone.png"
-      }
-    ]
-  }
-  </script>
+      "worksExample": [
+        {
+          "@type":"Book",
+          "name":"Down With Work",
+          "alternateName":"Down With Work — From Cubicle to Coffee Shop: Redefining Work in the Modern Age",
+          "author":{
+            "@type":"Person",
+            "name":"Will Sowman"
+          },
+          "bookFormat":"EBook",
+          "inLanguage":"en-GB",
+          "isbn":"",
+          "url":"https://www.amazon.co.uk/dp/B0DJRYGFKM",
+          "image":"https://will.sowman.org/images/down-with-work.png"
+        },
+        {
+          "@type":"Book",
+          "name":"From Commuting to Freedom",
+          "alternateName":"From Commuting to Freedom: How to Build a Fulfilling Career on Your Own Terms",
+          "author":{
+            "@type":"Person",
+            "name":"Will Sowman"
+          },
+          "bookFormat":"EBook",
+          "inLanguage":"en-GB",
+          "url":"https://leanpub.com/fromcommutingtofreedom/",
+          "image":"https://will.sowman.org/images/from_commuting_to_freedom.png"
+        },
+        {
+          "@type":"Book",
+          "name":"Prompt Engineering for Everyone",
+          "alternateName":"Prompt Engineering for Everyone: Unleashing the Power of AI",
+          "author":{"@type":"Person", "name":"Will Sowman"},
+          "bookFormat":"EBook",
+          "inLanguage":"en-GB",
+          "url":"https://leanpub.com/promptengineeringforeveryone/",
+          "image":"https://will.sowman.org/images/prompt_engineering_for_everyone.png"
+        }
+      ]
+    }
+    </script>
 
-  <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
-  <script src="/js/script.js"></script>
-</body>
+    <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
+    <script src="/js/script.js"></script>
+  </body>
 </html>
 
