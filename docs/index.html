@@ -20,100 +20,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400;600;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:site_name" content="Will Sowman — Author"/>
-  <meta property="og:title" content="Will Sowman — Author"/>
-  <meta property="og:description" content="Books: Down With Work; From Commuting to Freedom; Prompt Engineering for Everyone."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://will.sowman.org/"/>
-  <meta property="og:image" content="https://will.sowman.org/images/og-1200x630.jpg"/>
-  <meta property="og:image:alt" content="Covers of books by Will Sowman"/>
-  <meta name="twitter:card" content="summary_large_image"/>
+  <meta property="og:site_name" content="Will Sowman — Author">
+  <meta property="og:title" content="Will Sowman — Author">
+  <meta property="og:description" content="Books: Down With Work; From Commuting to Freedom; Prompt Engineering for Everyone.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://will.sowman.org/">
+  <meta property="og:image" content="https://will.sowman.org/images/og-1200x630.jpg">
+  <meta property="og:image:alt" content="Covers of books by Will Sowman">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <style>
-    :root{
-      --paper: #fbf7f1;
-      --ink: #2f2a28;
-      --muted: #6f665f;
-      --accent: #34557a;      /* deep blue */
-      --accent-2:#e6b676;     /* warm gold */
-      --card: #fffdf8;
-      --border: #efe1d2;
-      --shadow: 0 12px 32px rgba(50,30,10,.12);
-      --radius: 18px;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--ink);
-      background:
-        radial-gradient(1200px 600px at -10% -30%, #fff, transparent 60%),
-        radial-gradient(1200px 600px at 110% 120%, #fff, transparent 60%),
-        linear-gradient(0deg, #f6efe5 0%, #fff 100%);
-      background-color:var(--paper);
-      line-height:1.6;
-    }
-
-    a{ color: var(--accent); text-decoration: none }
-    a:hover{ text-decoration: underline }
-
-    /* Header */
-    header{
-      max-width:1100px; margin: 0 auto; padding: clamp(16px, 3vw, 28px);
-    }
-    .masthead{
-      display:grid; grid-template-columns: 160px 1fr; gap: clamp(14px, 2.5vw, 24px);
-      align-items:center; background: var(--card); border:1px solid var(--border); border-radius: var(--radius);
-      padding: clamp(14px, 2.5vw, 22px); box-shadow: var(--shadow);
-    }
-    .avatar{
-      width: 160px; height:160px; border-radius: 20px; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,.15);
-    }
-    .eyebrow{ font-size:.95rem; color:var(--muted); margin-bottom:.25rem }
-    h1{ font-family: "Literata", Georgia, serif; font-weight: 800; font-size: clamp(28px, 4.2vw, 48px); margin:.1em 0 .15em }
-    .tagline{ font-family:"Literata", Georgia, serif; font-size: clamp(15px, 2vw, 20px); opacity:.95; margin:.4rem 0 1rem }
-    .byline{ font-weight:700; margin-bottom: .6rem }
-
-    .cta-row{ display:flex; gap:10px; flex-wrap:wrap }
-    .btn{ display:inline-block; border:0; border-radius:999px; padding:.8rem 1.3rem; font-weight:800; cursor:pointer; box-shadow: 0 8px 18px rgba(0,0,0,.12) }
-    .btn-primary{ background: var(--accent); color:#fff }
-    .btn-secondary{ background: #f1ece4; color:#493f38 }
-    .btn:hover{ filter: brightness(1.05) }
-
-    /* Main sections */
-    main{ max-width:1100px; margin: 10px auto 40px; padding: 0 clamp(12px, 2vw, 16px) }
-
-    section{ margin-top: 28px }
-    .section-title{ font-family:"Literata", Georgia, serif; font-size: clamp(22px, 3.2vw, 32px); margin: 2px 0 12px }
-
-    /* About */
-    .about{ background: var(--card); border:1px solid var(--border); border-radius: var(--radius); padding: clamp(14px, 2.5vw, 22px); box-shadow: var(--shadow); }
-
-    /* Books */
-    .grid{ display:grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .book{ display:flex; flex-direction:column; gap:12px; background:var(--card); border:1px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow) }
-    .cover{ width:100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 14px; border: 1px solid #ecdcca; background:#fff }
-    .book h3{ font-size:1.2rem; margin:.2rem 0 0 }
-    .subtitle{ color:#5a4b4b; font-size:.95rem; margin:0 0 .2rem }
-    .blurb{ font-size:.98rem; color:#3b2f2f }
-    .pill{ display:inline-block; font-size:.8rem; padding:.2rem .55rem; border-radius:999px; background:#f3eadf; border:1px solid #e7d8c6; color:#5a4b4b }
-    .buyrow{ display:flex; flex-wrap:wrap; gap:10px; align-items:center }
-
-    details.more-stores{ background:#fff; border:1px solid #ecdcca; border-radius:14px; padding:8px 10px }
-    details.more-stores summary{ cursor:pointer; font-weight:700 }
-    .store-grid{ display:grid; gap:8px; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); margin-top:10px }
-    .store-grid a{ text-align:center; text-decoration:none; font-weight:700; padding:10px 12px; background:#f5eee4; border-radius:14px; border:1px solid #ead9c7; color:#3b2f2f }
-
-    /* Contact */
-    .contact{ background:var(--card); border:1px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow) }
-
-    footer{ max-width:1100px; margin: 20px auto 40px; padding: 0 clamp(12px, 2vw, 16px); font-size:.95rem; opacity:.8; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px }
-
-    @media (max-width: 720px){
-      .masthead{ grid-template-columns: 100px 1fr }
-      .avatar{ width:100px; height:100px; border-radius:14px }
-    }
-  </style>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header>
@@ -206,97 +122,7 @@
   </script>
 
   <script src="https://cdn.davecross.co.uk/js/amazon-store/v1/amazon-store.min.js" defer></script>
-  <script>
-    // ---------- Config ----------
-    const AFFILIATE_TAG = "davblog-21"; // change or blank out if you prefer
-
-    const BOOKS = [
-      {
-        id: "dww",
-        title: "Down With Work",
-        subtitle: "From Cubicle to Coffee Shop: Redefining Work in the Modern Age",
-        asin: "B0DJRYGFKM",
-        cover: "images/down-with-work.png",
-        blurb: "A practical guide to leaving the corporate rat race and designing flexible, fulfilling work on your own terms.",
-        leanpub: null,
-        newest: true
-      },
-      {
-        id: "fctf",
-        title: "From Commuting to Freedom",
-        subtitle: "How to Build a Fulfilling Career on Your Own Terms",
-        asin: "B0C43V25XW",
-        cover: "images/from_commuting_to_freedom.png",
-        blurb: "Prepare for freelancing, find clients, manage and scale your business, and avoid burnout — a complete guide to self-employment.",
-        leanpub: "https://leanpub.com/fromcommutingtofreedom/"
-      },
-      {
-        id: "pefe",
-        title: "Prompt Engineering for Everyone",
-        subtitle: "Unleashing the Power of AI",
-        asin: "B0C46XPQ8R",
-        cover: "images/prompt_engineering_for_everyone.png",
-        blurb: "An accessible tour of using prompts to get reliable, useful results from AI — with examples for work and learning.",
-        leanpub: "https://leanpub.com/promptengineeringforeveryone/"
-      }
-    ];
-
-    function renderBooks(){
-      const grid = document.getElementById('bookGrid');
-      grid.innerHTML = '';
-
-      BOOKS.forEach(b => {
-        const card = document.createElement('article');
-        card.className = 'book';
-        card.innerHTML = `
-          <img class="cover" src="${b.cover}" alt="Cover of ${b.title}" loading="lazy" />
-          ${b.newest ? '<span class="pill">Newest</span>' : ''}
-          <h3>${b.title}</h3>
-          <div class="subtitle">${b.subtitle}</div>
-          <p class="blurb">${b.blurb}</p>
-
-          <div class="buyrow">
-            <a class="btn btn-primary"
-               data-amazon-asin="${b.asin}">Buy on Amazon</a>
-            ${b.leanpub ? `<a class="btn btn-secondary" target="_blank" rel="noopener" href="${b.leanpub}">Also on Leanpub</a>` : ''}
-          </div>
-
-          <details class="more-stores"><summary>More stores</summary>
-            <div class="store-grid"
-                 data-amazon-grid
-                 data-amazon-asin="${b.asin}"></div>
-          </details>
-        `;
-        grid.appendChild(card);
-      });
-
-      // Header CTA goes to newest book in the viewer's store (using the library)
-      const newest   = BOOKS.find(x => x.newest) || BOOKS[0];
-      const buyHeader = document.getElementById('buyNowHeader');
-
-      if (buyHeader && newest) {
-        // 1) Let the library detect the region and give us a nice label
-        const region = AmazonStore.detectRegion();
-        buyHeader.textContent = `Buy now: ${newest.title} on ${AmazonStore.label(region)}`;
-
-        // 2) Give the library the data it needs; enhanceAll() will wire the click
-        buyHeader.dataset.amazonAsin = newest.asin;
-      }
-    }
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('year').textContent = new Date().getFullYear();
-
-      // Build DOM first
-      renderBooks();
-
-      // after the book tiles are rendered:
-      AmazonStore.enhanceAll({ tag: AFFILIATE_TAG });         // wires all buy buttons
-      AmazonStore.renderStoreGridAll({ tag: AFFILIATE_TAG }); // fills any [data-amazon-grid]
-    });
-  </script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
 
